@@ -29,7 +29,16 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    # service event RegistrationListerner
+    app_user.registration_listener:
+        class: AppBundle\EventListener\RegistrationListener
+        arguments: []
+        tags:
+            - { name: kernel.event_subscriber }
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+
