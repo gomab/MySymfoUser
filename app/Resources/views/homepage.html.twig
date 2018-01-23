@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Page d'acceuil</h1>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p><a href="{{ path('fos_user_security_login') }}">login</a></p>
+        <p><a href="{{ path('fos_user_registration_register') }}">Registration</a></p>
+
+        {% else %}
+            <p><a href="{{ path('fos_user_security_logout') }}">logout</a></p>
+
+    {% endif %}
+    
+
+{% endblock %}
